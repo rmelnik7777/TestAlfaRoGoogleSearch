@@ -66,7 +66,7 @@ extension ViewController: UISearchBarDelegate {
 }
 
 //MARK: - MultiSearch
-/*public func searchListings(searchState: SearchState, renderState: SearchRenderState); -Observable<PropertyNetworkResponse  {
+public func searchListings(searchState: SearchState, renderState: SearchRenderState); -Observable<PropertyNetworkResponse  {
                             
                             let observableX = self.getXData(searchState: searchState, renderState: renderState)
                             let observableY = self.getYData(searchState: searchState, renderState: renderState)
@@ -84,7 +84,7 @@ extension ViewController: UISearchBarDelegate {
                             })
 }
 
-*/
+
 
 //Mark Networking
 extension ViewController {
