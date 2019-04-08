@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TestAlfaRoGoogleSearch
 //
-//  Created by Viktor Drykin on 19.06.2018.
+//  Created by Roman Melnik  on 05.04.2019.
 //  Copyright © 2018 NGSE. All rights reserved.
 //
 

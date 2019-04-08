@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TestAlfaRoGoogleSearch
 //
-//  Created by Viktor Drykin on 19.06.2018.
+//  Created by Roman Melnik  on 05.04.2019.
 //  Copyright © 2018 NGSE. All rights reserved.
 //
 
@@ -14,6 +14,7 @@ import MBProgressHUD
 enum LayoutType {
     case grid
 }
+
 class ViewController: UIViewController{
     var datas: [GoogleData] = [GoogleData]()
     var layoutType: LayoutType = .grid
@@ -42,31 +43,22 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let data = datas[indexPath.row]
         print("1 data = \(data)")
         cell.dataGoogleTextViev!.text = layoutType == .grid ? data.dataSearch : data.searchURL
-        cell.backgroundColor = .red //UIColor(red : 233.0/255.0, green : 242.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+        cell.backgroundColor = .green //UIColor(red : 233.0/255.0, green : 242.0/255.0, blue: 250.0/255.0, alpha: 1.0)
         return cell
     }
-    /*
-    //change colors
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.backgroundColor = .blue
-        print("11111111111)")
-    }*/
-    
 }
+
 
 // MARK: - SearchBar
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         getGoogleSearch(searchText: searchBar.text)
-       
     }
 }
 
 //MARK: - MultiSearch
-public func searchListings(searchState: SearchState, renderState: SearchRenderState); -Observable<PropertyNetworkResponse  {
+/*public func searchListings(searchState: SearchState, renderState: SearchRenderState); -Observable<PropertyNetworkResponse  {
                             
                             let observableX = self.getXData(searchState: searchState, renderState: renderState)
                             let observableY = self.getYData(searchState: searchState, renderState: renderState)
@@ -84,7 +76,7 @@ public func searchListings(searchState: SearchState, renderState: SearchRenderSt
                             })
 }
 
-
+*/
 
 //Mark Networking
 extension ViewController {
@@ -101,14 +93,14 @@ extension ViewController {
         let url = URL(string: "https://www.googleapis.com/customsearch/v1?")
         var parameters = [
             "key": "AIzaSyB3YD_DYoLruCYPTR170RJ-Hd6mL1xa7gc",
-            "q": "переход",
-            "num": "5",
+            "q": "news today",
+            "num": "2",
             "cx": "018374168168575018408:yxsv8t-uj2m"
             
         ]
         if let searchText = searchText {
             parameters ["q"] = searchText
-            parameters["text"] = searchText
+            //parameters["text"] = searchText
         }
         print("seichas povaliat kalovaie massa")
         Alamofire.request(url!, method: .get, parameters: parameters)
@@ -122,12 +114,14 @@ extension ViewController {
                     let json = JSON(data)
                     self.datas.removeAll()
                     for item in json["items"].arrayValue {
-                        //print("item = \(item)")
+                        //print("json111111111 = \(item)")
                         
+                        
+                       
                         let gData = GoogleData()
                         gData.dataSearch = item["title"].stringValue
                         gData.searchURL = item["link"].stringValue
-                        //print("dsadadad = \(gData.dataSearch)")
+                        //print("d111111111111111111111 = \(gData.dataSearch)")
                         //print("111111111111111111111\(gData.searchURL)")
                         self.datas.append(gData)
                     }
@@ -146,6 +140,3 @@ extension ViewController {
 
         }
 }
-
-
-
