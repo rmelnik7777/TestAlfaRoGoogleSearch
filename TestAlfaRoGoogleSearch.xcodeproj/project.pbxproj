@@ -85,11 +85,11 @@
 				F56A0C3320D97D4F008F458A /* AppDelegate.swift */,
 				F56A0C3520D97D4F008F458A /* ViewController.swift */,
 				F5E924EC2110E11200B84F72 /* DataCell.swift */,
+				F54B8CF32108E2EB00AF699D /* Google_Data.swift */,
 				F56A0C3720D97D4F008F458A /* Main.storyboard */,
 				F56A0C3A20D97D68008F458A /* Assets.xcassets */,
 				F56A0C3C20D97D68008F458A /* LaunchScreen.storyboard */,
 				F56A0C3F20D97D68008F458A /* Info.plist */,
-				F54B8CF32108E2EB00AF699D /* Google_Data.swift */,
 			);
 			path = TestAlfaRoGoogleSearch;
 			sourceTree = "<group>";
