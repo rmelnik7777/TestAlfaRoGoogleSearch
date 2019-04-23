@@ -9,6 +9,5 @@ target 'TestAlfaRoGoogleSearch' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'MBProgressHUD'
-pod 'Kingfisher'
 
 end
