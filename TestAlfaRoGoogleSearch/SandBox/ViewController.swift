@@ -4,7 +4,6 @@
 //
 //  Created by Roman Melnik  on 05.04.2019.
 //  Copyright © 2018 NGSE. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -24,10 +23,10 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         getGoogleSearch()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    override func didReceiveMemoryWarning() {
+//        //super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     @IBAction func search(_ sender: UIButton) {       
     }
 }
@@ -39,6 +38,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
+        cell.backgroundColor = .green
         
         // Don't sleep screen
         UIApplication.shared.isIdleTimerDisabled = true
@@ -48,7 +48,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let data = self.datas[indexPath.row]
             DispatchQueue.main.async {
                 cell.dataGoogleTextViev!.text = self.layoutType == .grid ? data.dataSearch : data.searchURL
-                cell.backgroundColor = .green //UIColor(red : 233.0/255.0, green : 242.0/255.0, blue: 250.0/255.0, alpha: 1.0)
             }
         }
         return cell
@@ -77,8 +76,8 @@ extension ViewController {
         let url = URL(string: "https://www.googleapis.com/customsearch/v1?")
         var parameters = [
             "key": "AIzaSyB3YD_DYoLruCYPTR170RJ-Hd6mL1xa7gc",
-            "q": "alkoman",
-            "num": "2",
+            "q": "cat",
+            "num": "10",
             "cx": "018374168168575018408:yxsv8t-uj2m"
             
         ]

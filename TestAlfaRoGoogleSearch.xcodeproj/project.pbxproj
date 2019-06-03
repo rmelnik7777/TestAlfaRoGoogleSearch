@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55154A4022A59140002721FD /* SearchListPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55154A3F22A59140002721FD /* SearchListPresentationItem.swift */; };
+		55154A4222A595AE002721FD /* SearchListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55154A4122A595AE002721FD /* SearchListPresenterMock.swift */; };
+		55F849A522A508D600C5B9C6 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F849A422A508D600C5B9C6 /* List.storyboard */; };
+		55F849A722A50A6800C5B9C6 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F849A622A50A6800C5B9C6 /* SearchListView.swift */; };
+		55F849A922A50CE400C5B9C6 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F849A822A50CE400C5B9C6 /* SearchListViewController.swift */; };
+		55F849AE22A515BF00C5B9C6 /* SearchListEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F849AD22A515BF00C5B9C6 /* SearchListEventsHandler.swift */; };
 		B693E7EB40DB95E248D5DA05 /* Pods_TestAlfaRoGoogleSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC009416745B1B88990CBBDD /* Pods_TestAlfaRoGoogleSearch.framework */; };
 		F54B8CF42108E2EB00AF699D /* Google_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B8CF32108E2EB00AF699D /* Google_Data.swift */; };
 		F56A0C3420D97D4F008F458A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A0C3320D97D4F008F458A /* AppDelegate.swift */; };
@@ -19,6 +25,12 @@
 
 /* Begin PBXFileReference section */
 		0992664E9295E2C7403D670A /* Pods-TestAlfaRoGoogleSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAlfaRoGoogleSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch.release.xcconfig"; sourceTree = "<group>"; };
+		55154A3F22A59140002721FD /* SearchListPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresentationItem.swift; sourceTree = "<group>"; };
+		55154A4122A595AE002721FD /* SearchListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresenterMock.swift; sourceTree = "<group>"; };
+		55F849A422A508D600C5B9C6 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		55F849A622A50A6800C5B9C6 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		55F849A822A50CE400C5B9C6 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
+		55F849AD22A515BF00C5B9C6 /* SearchListEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListEventsHandler.swift; sourceTree = "<group>"; };
 		5AC28F7F4C7340F23CCF7DD1 /* Pods-TestAlfaRoGoogleSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAlfaRoGoogleSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		DC009416745B1B88990CBBDD /* Pods_TestAlfaRoGoogleSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestAlfaRoGoogleSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54B8CF32108E2EB00AF699D /* Google_Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google_Data.swift; sourceTree = "<group>"; };
@@ -44,6 +56,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55F8499D22A5008700C5B9C6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55F8499F22A500C700C5B9C6 /* Storage */,
+				55F8499E22A500BB00C5B9C6 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		55F8499E22A500BB00C5B9C6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		55F8499F22A500C700C5B9C6 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		55F849A022A500E400C5B9C6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				55F849AD22A515BF00C5B9C6 /* SearchListEventsHandler.swift */,
+				55154A4122A595AE002721FD /* SearchListPresenterMock.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		55F849A122A5010900C5B9C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F54B8CF32108E2EB00AF699D /* Google_Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55F849A222A5011200C5B9C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55F849A422A508D600C5B9C6 /* List.storyboard */,
+				55F849A622A50A6800C5B9C6 /* SearchListView.swift */,
+				55154A3F22A59140002721FD /* SearchListPresentationItem.swift */,
+				55F849A822A50CE400C5B9C6 /* SearchListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55F849A322A5015400C5B9C6 /* SandBox */ = {
+			isa = PBXGroup;
+			children = (
+				F56A0C3520D97D4F008F458A /* ViewController.swift */,
+				F5E924EC2110E11200B84F72 /* DataCell.swift */,
+				F56A0C3720D97D4F008F458A /* Main.storyboard */,
+			);
+			path = SandBox;
+			sourceTree = "<group>";
+		};
 		9A7C0626702554692994A803 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,14 +155,15 @@
 		F56A0C3220D97D4F008F458A /* TestAlfaRoGoogleSearch */ = {
 			isa = PBXGroup;
 			children = (
+				55F8499D22A5008700C5B9C6 /* Services */,
+				55F849A022A500E400C5B9C6 /* Presenter */,
+				55F849A122A5010900C5B9C6 /* Model */,
+				55F849A222A5011200C5B9C6 /* View */,
 				F56A0C3320D97D4F008F458A /* AppDelegate.swift */,
-				F56A0C3520D97D4F008F458A /* ViewController.swift */,
-				F5E924EC2110E11200B84F72 /* DataCell.swift */,
-				F54B8CF32108E2EB00AF699D /* Google_Data.swift */,
-				F56A0C3720D97D4F008F458A /* Main.storyboard */,
 				F56A0C3A20D97D68008F458A /* Assets.xcassets */,
 				F56A0C3C20D97D68008F458A /* LaunchScreen.storyboard */,
 				F56A0C3F20D97D68008F458A /* Info.plist */,
+				55F849A322A5015400C5B9C6 /* SandBox */,
 			);
 			path = TestAlfaRoGoogleSearch;
 			sourceTree = "<group>";
@@ -157,6 +231,7 @@
 			files = (
 				F56A0C3E20D97D68008F458A /* LaunchScreen.storyboard in Resources */,
 				F56A0C3B20D97D68008F458A /* Assets.xcassets in Resources */,
+				55F849A522A508D600C5B9C6 /* List.storyboard in Resources */,
 				F56A0C3920D97D4F008F458A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,9 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55154A4022A59140002721FD /* SearchListPresentationItem.swift in Sources */,
 				F54B8CF42108E2EB00AF699D /* Google_Data.swift in Sources */,
 				F56A0C3620D97D4F008F458A /* ViewController.swift in Sources */,
+				55F849A722A50A6800C5B9C6 /* SearchListView.swift in Sources */,
 				F56A0C3420D97D4F008F458A /* AppDelegate.swift in Sources */,
+				55F849AE22A515BF00C5B9C6 /* SearchListEventsHandler.swift in Sources */,
+				55F849A922A50CE400C5B9C6 /* SearchListViewController.swift in Sources */,
+				55154A4222A595AE002721FD /* SearchListPresenterMock.swift in Sources */,
 				F5E924ED2110E11200B84F72 /* DataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
