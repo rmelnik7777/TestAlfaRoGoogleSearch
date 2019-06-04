@@ -11,6 +11,7 @@ import UIKit
 class SearchListViewController: UIViewController {
     var evensHendler: SearchListEventsHandler? = SearchListPresenterMock()
 
+    @IBOutlet weak var DataCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,13 +17,13 @@ class SearchListPresenterMock: SearchListEventsHandler {
     
     func ready() {
         let item1 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item2 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item3 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item4 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item5 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item6 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item7 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item8 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item2 = SearchListPresentationItem (searchText: "dog", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item3 = SearchListPresentationItem (searchText: "london", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item4 = SearchListPresentationItem (searchText: "TT", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item5 = SearchListPresentationItem (searchText: "world", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item6 = SearchListPresentationItem (searchText: "Liashko", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item7 = SearchListPresentationItem (searchText: "Armen", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item8 = SearchListPresentationItem (searchText: "doll", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
         view?.update(items: [item1,item2,item3,item4,item5,item6,item7,item8])
     }
     
