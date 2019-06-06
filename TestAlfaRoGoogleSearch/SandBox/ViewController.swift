@@ -4,7 +4,6 @@
 //
 //  Created by Roman Melnik  on 05.04.2019.
 //  Copyright © 2018 NGSE. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -24,15 +23,14 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         getGoogleSearch()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    override func didReceiveMemoryWarning() {
+//        //super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     @IBAction func search(_ sender: UIButton) {       
     }
-    
-
 }
+
 //MARK: - Table View
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -40,14 +38,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
-        let data = datas[indexPath.row]
-        print("1 data = \(data)")
-        cell.dataGoogleTextViev!.text = layoutType == .grid ? data.dataSearch : data.searchURL
-        cell.backgroundColor = .green //UIColor(red : 233.0/255.0, green : 242.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+        cell.backgroundColor = .green
+        
+        // Don't sleep screen
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        // Create asynchrone treads
+        DispatchQueue.global().async {
+            let data = self.datas[indexPath.row]
+            DispatchQueue.main.async {
+                cell.dataGoogleTextViev!.text = self.layoutType == .grid ? data.dataSearch : data.searchURL
+            }
+        }
         return cell
     }
 }
-
 
 // MARK: - SearchBar
 extension ViewController: UISearchBarDelegate {
@@ -57,32 +62,10 @@ extension ViewController: UISearchBarDelegate {
     }
 }
 
-//MARK: - MultiSearch
-/*public func searchListings(searchState: SearchState, renderState: SearchRenderState); -Observable<PropertyNetworkResponse  {
-                            
-                            let observableX = self.getXData(searchState: searchState, renderState: renderState)
-                            let observableY = self.getYData(searchState: searchState, renderState: renderState)
- 
-                            return Observable.create({ (observer) -> Disposable in
-                                
-                                _ = Observable.zip(observableX, observableY, observableZ) { ($0, $1) }
-                                    .subscribe(onNext: { xData, yData in
-                                        let result = xData + yData
-                                        
-                                        observer.onNext(resultNetworkResponse)
-                                        observer.onCompleted()
-                                    })
-                                return Disposables.create()
-                            })
-}
-
-*/
-
-//Mark Networking
+//MARK: - Networking
 extension ViewController {
     func getGoogleSearch(searchText: String? = nil){
         MBProgressHUD.showAdded(to: view, animated: true)
-        
         fetchGoogleSearch(searchText: searchText) { [weak self](datas) in
             guard let strongSelf = self else {return}
             MBProgressHUD.hide(for: strongSelf.view, animated: true)
@@ -93,14 +76,13 @@ extension ViewController {
         let url = URL(string: "https://www.googleapis.com/customsearch/v1?")
         var parameters = [
             "key": "AIzaSyB3YD_DYoLruCYPTR170RJ-Hd6mL1xa7gc",
-            "q": "news today",
-            "num": "2",
+            "q": "cat",
+            "num": "10",
             "cx": "018374168168575018408:yxsv8t-uj2m"
             
         ]
         if let searchText = searchText {
             parameters ["q"] = searchText
-            //parameters["text"] = searchText
         }
         print("seichas povaliat kalovaie massa")
         Alamofire.request(url!, method: .get, parameters: parameters)
@@ -114,10 +96,6 @@ extension ViewController {
                     let json = JSON(data)
                     self.datas.removeAll()
                     for item in json["items"].arrayValue {
-                        //print("json111111111 = \(item)")
-                        
-                        
-                       
                         let gData = GoogleData()
                         gData.dataSearch = item["title"].stringValue
                         gData.searchURL = item["link"].stringValue
@@ -132,11 +110,6 @@ extension ViewController {
                     print ("error while fetching data: \(error.localizedDescription)")
                     completion?(nil)
                 }
-                
-                
-                
-                    
-                }
-
         }
+    }
 }
