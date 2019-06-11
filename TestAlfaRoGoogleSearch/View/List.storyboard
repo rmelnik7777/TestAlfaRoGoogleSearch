@@ -13,6 +13,7 @@
         <!--Search List View Controller-->
         <scene sceneID="AEM-l8-gdg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-N5-cWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qoz-tY-dT2" customClass="SearchListViewController" customModule="TestAlfaRoGoogleSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGo-q1-pUT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -48,15 +49,22 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QYo-C9-8DC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MMT-tq-gL2" customClass="TableViewCell" customModule="TestAlfaRoGoogleSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="111" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QYo-C9-8DC" id="Frl-CI-aBt">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMT-tq-gL2" id="QtB-ye-aeD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tableViewCell" destination="QtB-ye-aeD" id="UDL-Vd-svH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qoz-tY-dT2" id="CDG-Bn-a8P"/>
+                                    <outlet property="delegate" destination="qoz-tY-dT2" id="7fy-f8-ave"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,10 +76,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E1i-l5-L8b"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="POv-Ft-N2b" id="CDf-md-eeP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-N5-cWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="-317.09145427286359"/>
+            <point key="canvasLocation" x="126" y="-258"/>
         </scene>
     </scenes>
 </document>

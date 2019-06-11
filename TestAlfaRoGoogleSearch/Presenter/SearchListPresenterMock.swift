@@ -12,9 +12,6 @@ class SearchListPresenterMock: SearchListEventsHandler {
     
     weak var view: SearchListView?
     
-    
-    
-    
     func ready() {
         let item1 = SearchListPresentationItem (searchText: "cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
         let item2 = SearchListPresentationItem (searchText: "dog", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5506F27C22AE357900F034C2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5506F27B22AE357900F034C2 /* TableViewCell.swift */; };
 		55154A4022A59140002721FD /* SearchListPresentationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55154A3F22A59140002721FD /* SearchListPresentationItem.swift */; };
 		55154A4222A595AE002721FD /* SearchListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55154A4122A595AE002721FD /* SearchListPresenterMock.swift */; };
 		551631DB22A67C2300705CA9 /* icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = 551631CE22A67C2200705CA9 /* icon76.png */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		0992664E9295E2C7403D670A /* Pods-TestAlfaRoGoogleSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestAlfaRoGoogleSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch.release.xcconfig"; sourceTree = "<group>"; };
+		5506F27B22AE357900F034C2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		55154A3F22A59140002721FD /* SearchListPresentationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresentationItem.swift; sourceTree = "<group>"; };
 		55154A4122A595AE002721FD /* SearchListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresenterMock.swift; sourceTree = "<group>"; };
 		551631CE22A67C2200705CA9 /* icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon76.png; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				55F849A622A50A6800C5B9C6 /* SearchListView.swift */,
 				55154A3F22A59140002721FD /* SearchListPresentationItem.swift */,
 				55F849A822A50CE400C5B9C6 /* SearchListViewController.swift */,
+				5506F27B22AE357900F034C2 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,8 +249,8 @@
 		55F849A322A5015400C5B9C6 /* SandBox */ = {
 			isa = PBXGroup;
 			children = (
-				F56A0C3520D97D4F008F458A /* ViewController.swift */,
 				F5E924EC2110E11200B84F72 /* DataCell.swift */,
+				F56A0C3520D97D4F008F458A /* ViewController.swift */,
 				F56A0C3720D97D4F008F458A /* Main.storyboard */,
 			);
 			path = SandBox;
@@ -467,6 +470,7 @@
 				F56A0C3620D97D4F008F458A /* ViewController.swift in Sources */,
 				55F849A722A50A6800C5B9C6 /* SearchListView.swift in Sources */,
 				F56A0C3420D97D4F008F458A /* AppDelegate.swift in Sources */,
+				5506F27C22AE357900F034C2 /* TableViewCell.swift in Sources */,
 				55F849AE22A515BF00C5B9C6 /* SearchListEventsHandler.swift in Sources */,
 				55F849A922A50CE400C5B9C6 /* SearchListViewController.swift in Sources */,
 				55154A4222A595AE002721FD /* SearchListPresenterMock.swift in Sources */,

@@ -8,35 +8,52 @@
 
 import UIKit
 
-class SearchListViewController: UIViewController {
+class SearchListViewController: UIViewController    {
+   
+    //MARK: - Variable
     var evensHendler: SearchListEventsHandler? = SearchListPresenterMock()
-
-    @IBOutlet weak var DataCell: UITableViewCell!
+    var datas: [SearchListPresentationItem] = []
     
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         evensHendler?.view = self
-       evensHendler?.ready()
+        evensHendler?.ready()
+        print ("countString -", datas.count)
+        //self.tableView.dataSource = self;
+        //self.tableView.delegate = self;
+        //searchController = UISearchController(searchResultsController: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+
+extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
+
+// number of rows in table view
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print("gektor")
+    print("1111", datas)
+    return datas.count
+}
+
+// create a cell for each table view row
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+    print("kon")
+    let item = datas[indexPath.row]
+    
+    cell.update(listItem: item)
+    print(item)
+    return cell
+    }
+}
 
 extension SearchListViewController: SearchListView {
     func update(items: [SearchListPresentationItem]) {
-    debugPrint(items)
+        datas.append(contentsOf: items)
+        tableView.reloadData()
+        debugPrint(items)
     }
-    
-    
 }
+
