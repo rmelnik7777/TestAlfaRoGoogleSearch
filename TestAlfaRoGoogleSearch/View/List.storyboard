@@ -13,7 +13,6 @@
         <!--Search List View Controller-->
         <scene sceneID="AEM-l8-gdg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-N5-cWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qoz-tY-dT2" customClass="SearchListViewController" customModule="TestAlfaRoGoogleSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGo-q1-pUT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -49,15 +48,28 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MMT-tq-gL2" customClass="TableViewCell" customModule="TestAlfaRoGoogleSearch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="MMT-tq-gL2" customClass="TableViewCell" customModule="TestAlfaRoGoogleSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="111" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMT-tq-gL2" id="QtB-ye-aeD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-VS-1J6">
+                                                    <rect key="frame" x="0.0" y="22.5" width="375" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="b4m-VS-1J6" secondAttribute="trailing" id="6ug-Fl-KCV"/>
+                                                <constraint firstItem="b4m-VS-1J6" firstAttribute="leading" secondItem="QtB-ye-aeD" secondAttribute="leading" id="MnS-Eb-iWk"/>
+                                                <constraint firstAttribute="bottom" secondItem="b4m-VS-1J6" secondAttribute="bottom" id="gco-b6-XI0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="tableViewCell" destination="QtB-ye-aeD" id="UDL-Vd-svH"/>
+                                            <outlet property="lableViewCell" destination="b4m-VS-1J6" id="cCt-F9-U81"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -80,6 +92,7 @@
                         <outlet property="tableView" destination="POv-Ft-N2b" id="CDf-md-eeP"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-N5-cWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="126" y="-258"/>
         </scene>

@@ -9,11 +9,11 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet weak var tableViewCell: UILabel!
+ 
+    @IBOutlet weak var lableViewCell: UILabel!
     
     func update(listItem: SearchListPresentationItem) {
-        tableViewCell.text = listItem.searchText
-        print("11111111 - ", listItem.searchText)
+        lableViewCell.text = listItem.searchText
     }
 
 }

@@ -20,31 +20,22 @@ class SearchListViewController: UIViewController    {
         super.viewDidLoad()
         evensHendler?.view = self
         evensHendler?.ready()
-        print ("countString -", datas.count)
-        //self.tableView.dataSource = self;
-        //self.tableView.delegate = self;
         //searchController = UISearchController(searchResultsController: nil)
     }
 }
-
 
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
 
 // number of rows in table view
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print("gektor")
-    print("1111", datas)
     return datas.count
 }
 
 // create a cell for each table view row
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-    print("kon")
     let item = datas[indexPath.row]
-    
     cell.update(listItem: item)
-    print(item)
     return cell
     }
 }
