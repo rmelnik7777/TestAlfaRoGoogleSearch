@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SearchListViewController: UIViewController {
    
@@ -45,14 +46,18 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 // MARK: - SearchBar
 extension SearchListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.label.text = "Заливаю тебе вирус..."
         guard !searchText.isEmpty else {
             filterSearchDatas = []
+            hud.hide(animated: true)
             tableView.reloadData()
             return
         }
         filterSearchDatas = datas.filter({ SearchListPresentationItem -> Bool in
             return SearchListPresentationItem.title.contains(searchText)
         })
+        hud.hide(animated: true)
         tableView.reloadData()
     }
 }
