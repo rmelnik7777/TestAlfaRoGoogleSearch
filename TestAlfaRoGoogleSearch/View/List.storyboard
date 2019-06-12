@@ -31,10 +31,13 @@
                                                 <searchBar contentMode="redraw" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="arx-oF-5bt">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="qoz-tY-dT2" id="RfZ-YQ-xPe"/>
+                                                    </connections>
                                                 </searchBar>
                                                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZL-qF-7rh">
                                                     <rect key="frame" x="0.0" y="53" width="375" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="STOP SEARCH"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -89,6 +92,7 @@
                         <viewLayoutGuide key="safeArea" id="E1i-l5-L8b"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="arx-oF-5bt" id="9K7-5K-gJd"/>
                         <outlet property="tableView" destination="POv-Ft-N2b" id="CDf-md-eeP"/>
                     </connections>
                 </viewController>

@@ -8,37 +8,55 @@
 
 import UIKit
 
-class SearchListViewController: UIViewController    {
+class SearchListViewController: UIViewController {
    
     //MARK: - Variable
     var evensHendler: SearchListEventsHandler? = SearchListPresenterMock()
     var datas: [SearchListPresentationItem] = []
-    
-    @IBOutlet weak var tableView: UITableView!
+    private var filterSearchDatas: [SearchListPresentationItem] = []
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         evensHendler?.view = self
         evensHendler?.ready()
-        //searchController = UISearchController(searchResultsController: nil)
     }
 }
-
+//MARK: - Table View
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
 
 // number of rows in table view
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return datas.count
+    //return filterSearchDatas.count
+    return filterSearchDatas.count
 }
 
 // create a cell for each table view row
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-    let item = datas[indexPath.row]
-    cell.update(listItem: item)
+        let item = filterSearchDatas[indexPath.row]
+        cell.update(listItem: item)
     return cell
     }
 }
+
+// MARK: - SearchBar
+extension SearchListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        guard !searchText.isEmpty else {
+            filterSearchDatas = []
+            tableView.reloadData()
+            return
+        }
+        filterSearchDatas = datas.filter({ SearchListPresentationItem -> Bool in
+            return SearchListPresentationItem.title.contains(searchText)
+        })
+        tableView.reloadData()
+    }
+}
+
 
 extension SearchListViewController: SearchListView {
     func update(items: [SearchListPresentationItem]) {
@@ -47,4 +65,3 @@ extension SearchListViewController: SearchListView {
         debugPrint(items)
     }
 }
-
