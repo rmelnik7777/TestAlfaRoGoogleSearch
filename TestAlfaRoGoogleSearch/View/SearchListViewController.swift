@@ -15,9 +15,14 @@ class SearchListViewController: UIViewController {
     var evensHendler: SearchListEventsHandler? = SearchListPresenterMock()
     var datas: [SearchListPresentationItem] = []
     private var filterSearchDatas: [SearchListPresentationItem] = []
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBAction func stopSearchButton(_ sender: UIButton) {
+        
+        print("Нажата кнопка")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

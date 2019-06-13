@@ -38,6 +38,12 @@
                                                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZL-qF-7rh">
                                                     <rect key="frame" x="0.0" y="53" width="375" height="30"/>
                                                     <state key="normal" title="STOP SEARCH"/>
+                                                    <state key="disabled" title="STOP SEARCH"/>
+                                                    <state key="selected" title="Don`t tuch"/>
+                                                    <state key="highlighted" title="Don`t tuch"/>
+                                                    <connections>
+                                                        <action selector="stopSearchButton:" destination="qoz-tY-dT2" eventType="touchUpInside" id="bbV-4l-2dL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
