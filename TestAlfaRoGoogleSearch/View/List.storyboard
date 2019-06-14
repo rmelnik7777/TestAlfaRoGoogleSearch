@@ -42,7 +42,7 @@
                                                     <state key="selected" title="Don`t tuch"/>
                                                     <state key="highlighted" title="Don`t tuch"/>
                                                     <connections>
-                                                        <action selector="stopSearchButton:" destination="qoz-tY-dT2" eventType="touchUpInside" id="bbV-4l-2dL"/>
+                                                        <action selector="didTapStopSearchButton:" destination="qoz-tY-dT2" eventType="touchUpInside" id="omU-6k-QGb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

@@ -13,14 +13,14 @@ class SearchListPresenterMock: SearchListEventsHandler {
     weak var view: SearchListView?
     
     func ready() {
-        let item1 = SearchListPresentationItem (title: "Cat", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item2 = SearchListPresentationItem (title: "Dog", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item3 = SearchListPresentationItem (title: "London", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item4 = SearchListPresentationItem (title: "Alibaba", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item5 = SearchListPresentationItem (title: "World", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item6 = SearchListPresentationItem (title: "Liashko", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item7 = SearchListPresentationItem (title: "Armen", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
-        let item8 = SearchListPresentationItem (title: "QOS", url: URL(string: "https://www.youtube.com/watch?v=JtDf-S1uLLs")!)
+        let item1 = SearchListPresentationItem (title: "Cat", url: "https://www.youtube.com/watch?v=JtDf-S1uLLs")
+        let item2 = SearchListPresentationItem (title: "Dog", url: "https://google.com")
+        let item3 = SearchListPresentationItem (title: "London", url: "https://www.youtube.com")
+        let item4 = SearchListPresentationItem (title: "Alibaba", url: "https://www.duolingo.com")
+        let item5 = SearchListPresentationItem (title: "World", url: "https://lingualeo.com/")
+        let item6 = SearchListPresentationItem (title: "Liashko", url: "http://www.multitran.ru/")
+        let item7 = SearchListPresentationItem (title: "Armen", url: "https://uk.glosbe.com/")
+        let item8 = SearchListPresentationItem (title: "QOS", url: "https://translate.google.ru/")
         view?.update(items: [item1,item2,item3,item4,item5,item6,item7,item8])
     }
     
