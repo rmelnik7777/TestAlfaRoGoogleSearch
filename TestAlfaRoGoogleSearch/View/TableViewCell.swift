@@ -9,11 +9,9 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
- 
     @IBOutlet weak var lableViewCell: UILabel!
     
     func update(listItem: SearchListPresentationItem) {
         lableViewCell.text = listItem.title
     }
-
 }
