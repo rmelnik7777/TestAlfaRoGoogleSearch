@@ -17,16 +17,16 @@ enum LayoutType {
 class ViewController: UIViewController{
     var datas: [GoogleData] = [GoogleData]()
     var layoutType: LayoutType = .grid
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getGoogleSearch()
     }
-//    override func didReceiveMemoryWarning() {
-//        //super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
+
     @IBAction func search(_ sender: UIButton) {       
     }
 }
@@ -39,9 +39,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as! DataCell
         cell.backgroundColor = .green
-        
-        // Don't sleep screen
-        UIApplication.shared.isIdleTimerDisabled = true
+
         
         // Create asynchrone treads
         DispatchQueue.global().async {

@@ -9,6 +9,6 @@
 import Foundation
 
 struct SearchListPresentationItem {
-    let searchText: String
+    let title: String
     let url: URL
 }
