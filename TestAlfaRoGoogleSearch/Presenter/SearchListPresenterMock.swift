@@ -25,12 +25,16 @@ class SearchListPresenterMock: SearchListEventsHandler {
     }
     
     func open(link: URL) {
+        
     }
     
     func search(text: String) {
+         print("searchhhhh", text)
+        
     }
     
     func stopSearch() {
+        print("Нажата кнопка")
     }
     
     

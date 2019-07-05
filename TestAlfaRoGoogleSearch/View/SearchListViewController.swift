@@ -12,15 +12,20 @@ import Foundation
 
 class SearchListViewController: UIViewController {
    
+    enum Constants {
+        static let tableViewCellReusableId  = "TableViewCell"
+    }
+    
 //MARK: - Variable
-    var evensHendler: SearchListEventsHandler? = SearchListPresenterMock()
-    private var data: [SearchListPresentationItem] = []
-    private var filterSearchData: [SearchListPresentationItem] = []
+    //var evensHendler: SearchListEventsHandler? = SearchListPresenterMock()
+    var evensHendler: SearchListEventsHandler? = SearchListPresenter()
+    var data: [SearchListPresentationItem] = []
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBAction func didTapStopSearchButton(_ sender: UIButton) {
-        print("Нажата кнопка")
+        evensHendler?.stopSearch()
     }
     
     override func viewDidLoad() {
@@ -34,43 +39,38 @@ class SearchListViewController: UIViewController {
 //MARK: - Table View
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterSearchData.count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        let item = filterSearchData[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCellReusableId, for: indexPath) as! TableViewCell
+        let item = data[indexPath.row]
         cell.update(listItem: item)
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(filterSearchData[indexPath.row].url)
-        UIApplication.shared.open(URL(string: filterSearchData[indexPath.row].url)! as URL, options: [:], completionHandler: nil )
+        print(data[indexPath.row].url)
+        UIApplication.shared.open(URL(string: data[indexPath.row].url)! as URL, options: [:], completionHandler: nil )
 
     }
 }
 
 // MARK: - SearchBar
 extension SearchListViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
-            filterSearchData = []
+            data = []
             reloadProgres()
             return
         }
-        filterSearchData = data.filter({ SearchListPresentationItem -> Bool in
-            return SearchListPresentationItem.title.contains(searchText)
-        })
-        reloadProgres()
+        evensHendler?.search(text: searchText)
     }
-    
-    func  reloadProgres () {
+    func  reloadProgres() {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.label.text = "Заливаю тебе вирус..."
         hud.hide(animated: true)
-        tableView.reloadData()
     }
 }
 

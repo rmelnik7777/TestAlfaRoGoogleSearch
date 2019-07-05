@@ -6,8 +6,6 @@
 //  Copyright © 2019 NGSE. All rights reserved.
 //
 
-import Foundation
-
 struct SearchListPresentationItem {
     let title: String
     let url: String
