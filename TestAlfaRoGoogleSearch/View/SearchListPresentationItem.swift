@@ -9,4 +9,5 @@
 struct SearchListPresentationItem {
     let title: String
     let url: String
+    let image: String
 }

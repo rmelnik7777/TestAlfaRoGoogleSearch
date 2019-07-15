@@ -64,20 +64,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-VS-1J6">
-                                                    <rect key="frame" x="0.0" y="22.5" width="375" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-VS-1J6">
+                                                    <rect key="frame" x="44" y="0.0" width="331" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDR-y1-ZfZ">
+                                                    <rect key="frame" x="6" y="6" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="b4m-VS-1J6" secondAttribute="trailing" id="6ug-Fl-KCV"/>
-                                                <constraint firstItem="b4m-VS-1J6" firstAttribute="leading" secondItem="QtB-ye-aeD" secondAttribute="leading" id="MnS-Eb-iWk"/>
-                                                <constraint firstAttribute="bottom" secondItem="b4m-VS-1J6" secondAttribute="bottom" id="gco-b6-XI0"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageViewCell" destination="XDR-y1-ZfZ" id="7jU-Sh-Bkh"/>
                                             <outlet property="lableViewCell" destination="b4m-VS-1J6" id="cCt-F9-U81"/>
                                         </connections>
                                     </tableViewCell>
@@ -104,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H0s-N5-cWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="-258"/>
+            <point key="canvasLocation" x="125.59999999999999" y="-258.62068965517244"/>
         </scene>
     </scenes>
 </document>

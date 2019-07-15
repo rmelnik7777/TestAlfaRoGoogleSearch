@@ -5,7 +5,8 @@
 //  Created by Roman Melnik  on 6/19/19..
 //  Copyright © 2018 NGSE. All rights reserved.
 //
-struct GoogleData: Codable {
+struct GoogleData {
     let title: String
     let link: String
+    let image: String
 }
