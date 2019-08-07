@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'TestAlfaRoGoogleSearch' do
 
-
+pod ‘SQLite.swift’, :git => ‘https://github.com/stephencelis/SQLite.swift.git’, :branch => ‘master’
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'MBProgressHUD'

@@ -14,6 +14,7 @@ class SearchListViewController: UIViewController {
    
     enum Constants {
         static let tableViewCellReusableId  = "TableViewCell"
+        
     }
     
     
@@ -40,7 +41,10 @@ class SearchListViewController: UIViewController {
 //MARK: - Table View
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(data.count)
         return data.count
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,6 +64,7 @@ extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  
 // MARK: - SearchBar
 extension SearchListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        data.removeAll()
         guard !searchText.isEmpty else {
             progresBar()
             return

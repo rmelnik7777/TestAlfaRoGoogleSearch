@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,7 @@
 		5516322822A68E0A00705CA9 /* LauncherL2048x1496.png in Resources */ = {isa = PBXBuildFile; fileRef = 5516322622A68E0A00705CA9 /* LauncherL2048x1496.png */; };
 		5516322922A68E0A00705CA9 /* LauncherL1024x748.png in Resources */ = {isa = PBXBuildFile; fileRef = 5516322722A68E0A00705CA9 /* LauncherL1024x748.png */; };
 		551832E122CAA02A003A982B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551832E022CAA02A003A982B /* NetworkManager.swift */; };
+		557F8DF622DDCA7E00213C81 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F8DF522DDCA7E00213C81 /* Storage.swift */; };
 		55EF1C7122BA559E004212FA /* SearchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF1C7022BA559E004212FA /* SearchListPresenter.swift */; };
 		55EF1C7322BA69B9004212FA /* FetchGoogleSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF1C7222BA69B9004212FA /* FetchGoogleSearch.swift */; };
 		55F849A522A508D600C5B9C6 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F849A422A508D600C5B9C6 /* List.storyboard */; };
@@ -107,6 +108,7 @@
 		5516322622A68E0A00705CA9 /* LauncherL2048x1496.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LauncherL2048x1496.png; sourceTree = "<group>"; };
 		5516322722A68E0A00705CA9 /* LauncherL1024x748.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LauncherL1024x748.png; sourceTree = "<group>"; };
 		551832E022CAA02A003A982B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		557F8DF522DDCA7E00213C81 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		55EF1C7022BA559E004212FA /* SearchListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresenter.swift; sourceTree = "<group>"; };
 		55EF1C7222BA69B9004212FA /* FetchGoogleSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGoogleSearch.swift; sourceTree = "<group>"; };
 		55F849A422A508D600C5B9C6 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
@@ -170,13 +172,6 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
-		551631A422A661A900705CA9 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		551631B322A6760D00705CA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +213,7 @@
 		55F8499F22A500C700C5B9C6 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				557F8DF522DDCA7E00213C81 /* Storage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -299,7 +295,6 @@
 		F56A0C3220D97D4F008F458A /* TestAlfaRoGoogleSearch */ = {
 			isa = PBXGroup;
 			children = (
-				551631A422A661A900705CA9 /* Common */,
 				55F8499D22A5008700C5B9C6 /* Services */,
 				55F849A022A500E400C5B9C6 /* Presenter */,
 				55F849A122A5010900C5B9C6 /* Model */,
@@ -446,21 +441,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestAlfaRoGoogleSearch/Pods-TestAlfaRoGoogleSearch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -475,6 +465,7 @@
 				F54B8CF42108E2EB00AF699D /* GoogleData.swift in Sources */,
 				55EF1C7122BA559E004212FA /* SearchListPresenter.swift in Sources */,
 				55F849A722A50A6800C5B9C6 /* SearchListView.swift in Sources */,
+				557F8DF622DDCA7E00213C81 /* Storage.swift in Sources */,
 				F56A0C3420D97D4F008F458A /* AppDelegate.swift in Sources */,
 				5506F27C22AE357900F034C2 /* TableViewCell.swift in Sources */,
 				55EF1C7322BA69B9004212FA /* FetchGoogleSearch.swift in Sources */,

@@ -11,12 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 class FetchGoogleSearch {
-    public func fetchGoogleSearch(startForSearchPoint: String = "1", searchText: String? = nil,tread:String, completion: (([GoogleData]?) -> Void)? = nil){
+    public func fetchGoogleSearch(startForSearchPoint: String, searchText: String? = nil,tread:String, completion: (([GoogleData]?) -> Void)? = nil){
         let url = URL(string: "https://www.googleapis.com/customsearch/v1?")
         let parameters = [
             "key": "AIzaSyB3YD_DYoLruCYPTR170RJ-Hd6mL1xa7gc",
             "q": searchText ?? "",
-            "num": "1",
+            "num": "5",
             "cx": "018374168168575018408:yxsv8t-uj2m",
             "hl": "ru",
             "start": startForSearchPoint
@@ -26,8 +26,6 @@ class FetchGoogleSearch {
             .validate()
             .responseString(completionHandler: { response in
             })
-
-
             .responseJSON { (response ) in
                 switch response.result {
                 case .success(let info):
