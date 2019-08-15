@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import MBProgressHUD
-import CoreData
+import RealmSwift
 
 class SearchListPresenter: SearchListEventsHandler {
     weak var view: SearchListView?
