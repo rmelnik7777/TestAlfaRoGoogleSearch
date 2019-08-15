@@ -13,8 +13,7 @@ protocol SearchListEventsHandler {
     var view: SearchListView? { get set}
     
     func ready()
-    func open(link: URL)
-    func search (text: String, keyStop: Int)
+    func search (text: String)
     func stopSearch()
 
 }
