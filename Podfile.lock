@@ -1,39 +1,34 @@
 PODS:
-  - Alamofire (4.7.2)
+  - Alamofire (4.8.2)
   - MBProgressHUD (1.1.0)
-  - SQLite.swift (0.12.2):
-    - SQLite.swift/standard (= 0.12.2)
-  - SQLite.swift/standard (0.12.2)
-  - SwiftyJSON (4.1.0)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - MBProgressHUD
-  - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`, branch `master`)
+  - RealmSwift
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - MBProgressHUD
+    - Realm
+    - RealmSwift
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  SQLite.swift:
-    :branch: master
-    :git: https://github.com/stephencelis/SQLite.swift.git
-
-CHECKOUT OPTIONS:
-  SQLite.swift:
-    :commit: 0a9893ec030501a3956bee572d6b4fdd3ae158a1
-    :git: https://github.com/stephencelis/SQLite.swift.git
-
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  SQLite.swift: 5e0f310cac904e4317ffb620c845df67cbbf9536
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 8d109564970f6ea540b391f2136e3649970dc546
+PODFILE CHECKSUM: 6a27d5061c482a80556f25044ff2f87505d82b15
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.7.5

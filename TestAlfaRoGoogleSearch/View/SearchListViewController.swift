@@ -19,21 +19,19 @@ class SearchListViewController: UIViewController {
     
     
 //MARK: - Variable
-    var evensHendler: SearchListEventsHandler? = SearchListPresenter()
+    var eventsHendler: SearchListEventsHandler? = SearchListPresenter()
     var data: [SearchListPresentationItem] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBAction func didTapStopSearchButton(_ sender: UIButton) {
-        evensHendler?.stopSearch()
-    }
+    @IBAction func didTapStopSearchButton(_ sender: UIButton) { eventsHendler?.stopSearch() }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.tintColor = UIColor(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, alpha: 1.0)
         searchBar.barTintColor = UIColor(red: 96.0/255.0, green: 108.0/255.0, blue: 193.0/255.0, alpha: 2.0)
-        evensHendler?.view = self
-        evensHendler?.ready()
+        eventsHendler?.view = self
+        eventsHendler?.ready()
     }
 }
 
@@ -41,10 +39,7 @@ class SearchListViewController: UIViewController {
 //MARK: - Table View
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(data.count)
         return data.count
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +50,6 @@ extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIApplication.shared.open(URL(string: data[indexPath.row].url)! as URL, options: [:], completionHandler: nil )
-
     }
 }
 
@@ -67,10 +61,11 @@ extension SearchListViewController: UISearchBarDelegate {
         data.removeAll()
         guard !searchText.isEmpty else {
             progresBar()
+            tableView.reloadData()
             return
         }
         progresBar()
-        evensHendler?.search(text: searchText, keyStop: 0)
+        eventsHendler?.search(text: searchText)
     }
     public func  progresBar() {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)

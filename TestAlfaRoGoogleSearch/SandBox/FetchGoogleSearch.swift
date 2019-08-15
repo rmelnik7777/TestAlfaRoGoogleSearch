@@ -30,6 +30,7 @@ class FetchGoogleSearch {
                 switch response.result {
                 case .success(let info):
                     let json = JSON(info)
+                    print("fetchgooglesearch")
                     var gData = [GoogleData]()
                     for item in json["items"].arrayValue {
                         let filterSearchData = GoogleData(title: item["title"].stringValue, link: item["link"].stringValue, image: tread )
