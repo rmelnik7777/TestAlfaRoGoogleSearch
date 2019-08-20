@@ -9,19 +9,22 @@
 import UIKit
 import MBProgressHUD
 import Foundation
+import RealmSwift
 
 class SearchListViewController: UIViewController {
    
     enum Constants {
         static let tableViewCellReusableId  = "TableViewCell"
-        
     }
     
     
 //MARK: - Variable
     var eventsHendler: SearchListEventsHandler? = SearchListPresenter()
-    var data: [SearchListPresentationItem] = []
-
+//    var data: [SearchListPresentationItem] = []
+    
+    var realm = try? Realm() // Доступ к хранилищу
+    var dataStorage = [DataStorage]() //Контейнер со свойствами объекта DataStorage
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBAction func didTapStopSearchButton(_ sender: UIButton) { eventsHendler?.stopSearch() }
@@ -31,7 +34,10 @@ class SearchListViewController: UIViewController {
         searchBar.tintColor = UIColor(red: 128.0/255.0, green: 128.0/255.0, blue: 128.0/255.0, alpha: 1.0)
         searchBar.barTintColor = UIColor(red: 96.0/255.0, green: 108.0/255.0, blue: 193.0/255.0, alpha: 2.0)
         eventsHendler?.view = self
-        eventsHendler?.ready()
+        
+        if let result = realm?.objects(DataStorage.self) {
+            dataStorage = Array(result)
+        }
     }
 }
 
@@ -39,17 +45,21 @@ class SearchListViewController: UIViewController {
 //MARK: - Table View
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        //return data.count
+        return dataStorage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCellReusableId, for: indexPath) as! TableViewCell
-        cell.update(listItem: data[indexPath.row])
+
+//        cell.update(listItem: data[indexPath.row])
+        cell.update(listItem: dataStorage[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UIApplication.shared.open(URL(string: data[indexPath.row].url)! as URL, options: [:], completionHandler: nil )
+        print(dataStorage[indexPath.row].url)
+        UIApplication.shared.open(URL(string: dataStorage[indexPath.row].url)! as URL, options: [:], completionHandler: nil )
     }
 }
 
@@ -57,14 +67,24 @@ extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  
 
 // MARK: - SearchBar
 extension SearchListViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        data.removeAll()
+        progresBar()
+        //data.removeAll()
+        dataStorage.removeAll()
+        if let result = realm?.objects(DataStorage.self) {
+            try? realm?.write {
+                realm?.delete(result)
+            }
+            //dataStorage = Array(result)
+        }
+
         guard !searchText.isEmpty else {
             progresBar()
             tableView.reloadData()
             return
         }
-        progresBar()
+//        progresBar()
         eventsHendler?.search(text: searchText)
     }
     public func  progresBar() {
@@ -76,8 +96,18 @@ extension SearchListViewController: UISearchBarDelegate {
 
 extension SearchListViewController: SearchListView {
     func update(items: [SearchListPresentationItem]) {
-        progresBar()
-        data.append(contentsOf: items)
+//        data.append(contentsOf: items)
+//        data.forEach { (items) in
+        items.forEach { (item) in
+            let newItem = DataStorage(item: item)
+            print("newItem🐥🐥🐥🐥🐥 \(newItem)")
+            dataStorage.append(newItem)
+        }
+        
+        try? realm!.write {
+            realm?.add(dataStorage, update: true)
+            tableView.reloadData()
+        }
         tableView.reloadData()
         debugPrint(items)
     }

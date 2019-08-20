@@ -12,8 +12,8 @@ class Container<T> {
     private let semaphore = DispatchSemaphore(value: 1)
     private var items = [T]()
     private var counter = 0
-    
     private var handler: (([T])->())?
+    
     func ifUpdate(handler: @escaping ([T])->()) {
         self.handler = handler
     }

@@ -12,7 +12,6 @@ import Foundation
 protocol SearchListEventsHandler {
     var view: SearchListView? { get set}
     
-    func ready()
     func search (text: String)
     func stopSearch()
 

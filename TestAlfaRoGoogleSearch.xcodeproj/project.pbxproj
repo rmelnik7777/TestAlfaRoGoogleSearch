@@ -51,8 +51,8 @@
 		55237F37230563F00067BC3B /* NetworkLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55237F36230563F00067BC3B /* NetworkLoader.swift */; };
 		55237F39230564420067BC3B /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55237F38230564420067BC3B /* Container.swift */; };
 		55237F3B230564DB0067BC3B /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55237F3A230564DB0067BC3B /* Loader.swift */; };
+		55237F3D230591000067BC3B /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55237F3C230591000067BC3B /* DataStorage.swift */; };
 		55EF1C7122BA559E004212FA /* SearchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF1C7022BA559E004212FA /* SearchListPresenter.swift */; };
-		55EF1C7322BA69B9004212FA /* FetchGoogleSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF1C7222BA69B9004212FA /* FetchGoogleSearch.swift */; };
 		55F849A522A508D600C5B9C6 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F849A422A508D600C5B9C6 /* List.storyboard */; };
 		55F849A722A50A6800C5B9C6 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F849A622A50A6800C5B9C6 /* SearchListView.swift */; };
 		55F849A922A50CE400C5B9C6 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F849A822A50CE400C5B9C6 /* SearchListViewController.swift */; };
@@ -60,9 +60,7 @@
 		B693E7EB40DB95E248D5DA05 /* Pods_TestAlfaRoGoogleSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC009416745B1B88990CBBDD /* Pods_TestAlfaRoGoogleSearch.framework */; };
 		F54B8CF42108E2EB00AF699D /* GoogleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B8CF32108E2EB00AF699D /* GoogleData.swift */; };
 		F56A0C3420D97D4F008F458A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A0C3320D97D4F008F458A /* AppDelegate.swift */; };
-		F56A0C3920D97D4F008F458A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56A0C3720D97D4F008F458A /* Main.storyboard */; };
 		F56A0C3B20D97D68008F458A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56A0C3A20D97D68008F458A /* Assets.xcassets */; };
-		F5E924ED2110E11200B84F72 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E924EC2110E11200B84F72 /* DataCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,8 +109,8 @@
 		55237F36230563F00067BC3B /* NetworkLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoader.swift; sourceTree = "<group>"; };
 		55237F38230564420067BC3B /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		55237F3A230564DB0067BC3B /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		55237F3C230591000067BC3B /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		55EF1C7022BA559E004212FA /* SearchListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresenter.swift; sourceTree = "<group>"; };
-		55EF1C7222BA69B9004212FA /* FetchGoogleSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGoogleSearch.swift; sourceTree = "<group>"; };
 		55F849A422A508D600C5B9C6 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		55F849A622A50A6800C5B9C6 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		55F849A822A50CE400C5B9C6 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
@@ -122,11 +120,8 @@
 		F54B8CF32108E2EB00AF699D /* GoogleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleData.swift; sourceTree = "<group>"; };
 		F56A0C3020D97D4F008F458A /* TestAlfaRoGoogleSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAlfaRoGoogleSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56A0C3320D97D4F008F458A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F56A0C3520D97D4F008F458A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F56A0C3820D97D4F008F458A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F56A0C3A20D97D68008F458A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F56A0C3F20D97D68008F458A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5E924EC2110E11200B84F72 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +211,7 @@
 		55F8499F22A500C700C5B9C6 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				55237F3C230591000067BC3B /* DataStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -247,17 +243,6 @@
 				5506F27B22AE357900F034C2 /* TableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		55F849A322A5015400C5B9C6 /* SandBox */ = {
-			isa = PBXGroup;
-			children = (
-				55EF1C7222BA69B9004212FA /* FetchGoogleSearch.swift */,
-				F5E924EC2110E11200B84F72 /* DataCell.swift */,
-				F56A0C3520D97D4F008F458A /* ViewController.swift */,
-				F56A0C3720D97D4F008F458A /* Main.storyboard */,
-			);
-			path = SandBox;
 			sourceTree = "<group>";
 		};
 		9A7C0626702554692994A803 /* Pods */ = {
@@ -307,7 +292,6 @@
 				F56A0C3F20D97D68008F458A /* Info.plist */,
 				551631A122A6605B00705CA9 /* LaunchScreen */,
 				551631B322A6760D00705CA9 /* Icons */,
-				55F849A322A5015400C5B9C6 /* SandBox */,
 			);
 			path = TestAlfaRoGoogleSearch;
 			sourceTree = "<group>";
@@ -400,7 +384,6 @@
 				5516322222A68B1C00705CA9 /* LauncherL1024x768.png in Resources */,
 				551631E022A67C2300705CA9 /* icon120.png in Resources */,
 				5516321922A68B1C00705CA9 /* Launcher768x1004.png in Resources */,
-				F56A0C3920D97D4F008F458A /* Main.storyboard in Resources */,
 				551631E322A67C2300705CA9 /* icon60.png in Resources */,
 				5516321B22A68B1C00705CA9 /* Launcher750x1334.png in Resources */,
 				5516321F22A68B1C00705CA9 /* Launcher828x1792.png in Resources */,
@@ -468,29 +451,17 @@
 				F54B8CF42108E2EB00AF699D /* GoogleData.swift in Sources */,
 				55EF1C7122BA559E004212FA /* SearchListPresenter.swift in Sources */,
 				55F849A722A50A6800C5B9C6 /* SearchListView.swift in Sources */,
+				55237F3D230591000067BC3B /* DataStorage.swift in Sources */,
 				F56A0C3420D97D4F008F458A /* AppDelegate.swift in Sources */,
 				5506F27C22AE357900F034C2 /* TableViewCell.swift in Sources */,
-				55EF1C7322BA69B9004212FA /* FetchGoogleSearch.swift in Sources */,
 				55F849AE22A515BF00C5B9C6 /* SearchListEventsHandler.swift in Sources */,
 				55237F3B230564DB0067BC3B /* Loader.swift in Sources */,
 				55F849A922A50CE400C5B9C6 /* SearchListViewController.swift in Sources */,
 				55237F37230563F00067BC3B /* NetworkLoader.swift in Sources */,
-				F5E924ED2110E11200B84F72 /* DataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F56A0C3720D97D4F008F458A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F56A0C3820D97D4F008F458A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F56A0C4020D97D68008F458A /* Debug */ = {

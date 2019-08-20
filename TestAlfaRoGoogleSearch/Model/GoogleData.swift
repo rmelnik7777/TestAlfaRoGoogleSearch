@@ -7,6 +7,6 @@
 //
 struct GoogleData {
     let title: String
-    let link: String
+    let url: String
     let image: String
 }

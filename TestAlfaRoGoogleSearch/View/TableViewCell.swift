@@ -16,9 +16,15 @@ class TableViewCell: UITableViewCell {
     static let maxCharCount = 30
     }
     
-    func update(listItem: SearchListPresentationItem) {
+//    func update(listItem: SearchListPresentationItem) {
+//        lableViewCell.numberOfLines = 0 //Количество строк, которые будут отображаться в ячейке
+//        lableViewCell.text = String(listItem.title.prefix(Constans.maxCharCount)) //Максимальное количество символов, отображаемых в строке
+//        imageViewCell.image = UIImage(named: listItem.image) //Вывод картинки соответствующего потока
+//    }
+    
+    func update(listItem: DataStorage) {
         lableViewCell.numberOfLines = 0 //Количество строк, которые будут отображаться в ячейке
-        lableViewCell.text = String(listItem.title.prefix(Constans.maxCharCount)) //Максимальное количество символов, отображаемых в строке
+        lableViewCell.text = String (listItem.title.prefix(Constans.maxCharCount)) //Максимальное количество символов, отображаемых в строке
         imageViewCell.image = UIImage(named: listItem.image) //Вывод картинки соответствующего потока
     }
 }
