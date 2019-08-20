@@ -70,7 +70,6 @@ extension SearchListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         progresBar()
-        //data.removeAll()
         dataStorage.removeAll()
         if let result = realm?.objects(DataStorage.self) {
             try? realm?.write {
@@ -97,13 +96,11 @@ extension SearchListViewController: UISearchBarDelegate {
 extension SearchListViewController: SearchListView {
     func update(items: [SearchListPresentationItem]) {
 //        data.append(contentsOf: items)
-//        data.forEach { (items) in
         items.forEach { (item) in
             let newItem = DataStorage(item: item)
             print("newItem🐥🐥🐥🐥🐥 \(newItem)")
             dataStorage.append(newItem)
         }
-        
         try? realm!.write {
             realm?.add(dataStorage, update: true)
             tableView.reloadData()

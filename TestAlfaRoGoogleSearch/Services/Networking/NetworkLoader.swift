@@ -62,12 +62,12 @@ extension NetworkLoader{
         guard let workItem = currentWorkItem else { return }
         
         let parameters = [
-//            "key": "AIzaSyB3YD_DYoLruCYPTR170RJ-Hd6mL1xa7gc",
-            "key": "AIzaSyDpE26jqGu1lAQazkFJ8Oh6I5_qSXkGlZ4",
+            "key": "AIzaSyB3YD_DYoLruCYPTR170RJ-Hd6mL1xa7gc",
+//            "key": "AIzaSyDpE26jqGu1lAQazkFJ8Oh6I5_qSXkGlZ4",
             "q": text,
             "num": String(Constants.stepSearch),
-//            "cx": "018374168168575018408:yxsv8t-uj2m",
-            "cx": "007379028434554645740:f_rv9myd8ke",
+            "cx": "018374168168575018408:yxsv8t-uj2m",
+//            "cx": "007379028434554645740:f_rv9myd8ke",
             "hl": "ru",
             "start": String(startIndex)
         ]
