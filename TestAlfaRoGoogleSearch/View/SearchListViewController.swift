@@ -20,6 +20,7 @@ class SearchListViewController: UIViewController {
     
 //MARK: - Variable
     var eventsHendler: SearchListEventsHandler? = SearchListPresenter()
+    let hud = MBProgressHUD()
 //    var data: [SearchListPresentationItem] = []
     
     var realm = try? Realm() // Доступ к хранилищу
@@ -27,7 +28,10 @@ class SearchListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBAction func didTapStopSearchButton(_ sender: UIButton) { eventsHendler?.stopSearch() }
+    @IBAction func didTapStopSearchButton(_ sender: UIButton) {
+        eventsHendler?.stopSearch()
+        hud.hide(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +58,7 @@ extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  
 
 //        cell.update(listItem: data[indexPath.row])
         cell.update(listItem: dataStorage[indexPath.row])
+        hud.hide(animated: true)
         return cell
     }
     
@@ -69,27 +74,28 @@ extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  
 extension SearchListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        progresBar()
+        self.progresBar()
         dataStorage.removeAll()
         if let result = realm?.objects(DataStorage.self) {
             try? realm?.write {
                 realm?.delete(result)
             }
-            //dataStorage = Array(result)
         }
 
         guard !searchText.isEmpty else {
-            progresBar()
+            hud.hide(animated: true)
             tableView.reloadData()
+            
             return
         }
-//        progresBar()
         eventsHendler?.search(text: searchText)
     }
+    
     public func  progresBar() {
-        let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.label.text = "Заливаю тебе вирус..."
-        hud.hide(animated: true)
+        view.addSubview(hud)
+        hud.isUserInteractionEnabled = false
+        hud.show(animated: true)
     }
 }
 
@@ -106,6 +112,6 @@ extension SearchListViewController: SearchListView {
             tableView.reloadData()
         }
         tableView.reloadData()
-        debugPrint(items)
+        //debugPrint(items)
     }
 }

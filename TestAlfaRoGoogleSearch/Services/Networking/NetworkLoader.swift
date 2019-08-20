@@ -51,7 +51,7 @@ extension NetworkLoader{
     
     func perform(text: String) {
         
-        simulateCalculation() // imitation delay
+//        simulateCalculation() // imitation delay
         
         let startIndex = container.reserve(count: Constants.stepSearch)
         guard startIndex <= Constants.maxResult else {
@@ -98,8 +98,8 @@ extension NetworkLoader{
         }
     }
     
-    private func simulateCalculation() {
-        let delay = UInt32.random(in: 1..<7)
-        sleep(delay)
-    }
+//    private func simulateCalculation() {
+//        let delay = UInt32.random(in: 1..<7)
+//        sleep(delay)
+//    }
 }
