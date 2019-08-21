@@ -21,10 +21,9 @@ class SearchListViewController: UIViewController {
 //MARK: - Variable
     var eventsHendler: SearchListEventsHandler? = SearchListPresenter()
     let hud = MBProgressHUD()
-//    var data: [SearchListPresentationItem] = []
     
     var realm = try? Realm() // Доступ к хранилищу
-    var dataStorage = [DataStorage]() //Контейнер со свойствами объекта DataStorage
+    var dataStorage = [DataStorage]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -49,26 +48,20 @@ class SearchListViewController: UIViewController {
 //MARK: - Table View
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return data.count
         return dataStorage.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCellReusableId, for: indexPath) as! TableViewCell
-
-//        cell.update(listItem: data[indexPath.row])
         cell.update(listItem: dataStorage[indexPath.row])
         hud.hide(animated: true)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(dataStorage[indexPath.row].url)
         UIApplication.shared.open(URL(string: dataStorage[indexPath.row].url)! as URL, options: [:], completionHandler: nil )
     }
 }
-
-
 
 // MARK: - SearchBar
 extension SearchListViewController: UISearchBarDelegate {
@@ -85,14 +78,13 @@ extension SearchListViewController: UISearchBarDelegate {
         guard !searchText.isEmpty else {
             hud.hide(animated: true)
             tableView.reloadData()
-            
             return
         }
         eventsHendler?.search(text: searchText)
     }
     
     public func  progresBar() {
-        hud.label.text = "Заливаю тебе вирус..."
+        hud.label.text = "Идет загрузка данных"
         view.addSubview(hud)
         hud.isUserInteractionEnabled = false
         hud.show(animated: true)
@@ -101,17 +93,14 @@ extension SearchListViewController: UISearchBarDelegate {
 
 extension SearchListViewController: SearchListView {
     func update(items: [SearchListPresentationItem]) {
-//        data.append(contentsOf: items)
         items.forEach { (item) in
             let newItem = DataStorage(item: item)
-            print("newItem🐥🐥🐥🐥🐥 \(newItem)")
             dataStorage.append(newItem)
         }
         try? realm!.write {
             realm?.add(dataStorage, update: true)
             tableView.reloadData()
         }
-        tableView.reloadData()
-        //debugPrint(items)
+        //tableView.reloadData()
     }
 }

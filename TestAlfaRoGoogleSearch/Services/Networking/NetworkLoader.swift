@@ -71,7 +71,6 @@ extension NetworkLoader{
             "hl": "ru",
             "start": String(startIndex)
         ]
-        print("🐡🐡🐡🐡🐡\(startIndex)")
         guard !workItem.isCancelled else { return }
         print("🐷🐷🐷🐷🐷 номер потока - ", Thread.current, "🦍🦍🦍🦍🦍")
         Alamofire.request(Constants.url!, method: .get, parameters: parameters)
